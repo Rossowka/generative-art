@@ -3,4 +3,16 @@
     width: 100vw;
     padding: 1rem;
     background-color: antiquewhite; //temporary color
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+        aspect-ratio: 1;
+        background-color: white; //temporary color
+    }
+
+    .box {
+        border: 1px black solid;
+    }
 }
