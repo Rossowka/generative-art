@@ -12,7 +12,9 @@
         background-color: white; //temporary color
     }
 
-    .box {
-        border: 1px black solid;
-    }
+}
+
+.box {
+    fill: none;
+    stroke: black; //temporary property
 }
