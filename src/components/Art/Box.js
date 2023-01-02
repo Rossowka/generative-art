@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-function Box({ boxes, artSize }) {
-    let boxSize = artSize / boxes ;
+function Box({ boxSize, indexY, indexX }) {
 
     return (
-        <rect x='0' y='0' width={boxSize} height={boxSize} className='box'/>
+        <g className='box'>
+            <rect x={boxSize * indexX} y={boxSize * indexY} width={boxSize} height={boxSize}/>
+        </g>
     )
 }
 

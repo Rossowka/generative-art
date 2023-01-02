@@ -11,21 +11,17 @@ function Art() {
 
     // to break out from the square pattern you can randomize art size
     const artSize = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.9);
-    const gridSize = (random(3, 12));
+    const gridSize = random(3, 12);
     const boxSize = artSize / gridSize ;
 
-    let boxes = new Array(gridSize).fill(new Array(gridSize));
-
-    // test
-    console.log('Grid:' + gridSize);
-    console.log(boxes);
+    let boxes = new Array(gridSize).fill(new Array(gridSize).fill(0));
 
     return (
         <div className='art'>
             <svg width={artSize}>
-                {boxes.map((element, index) => (
-                    <Box key={`box-${index}`} boxSize={boxSize}/>
-                ))}
+                {boxes.map((array, indexY) => array.map((box, indexX) => (
+                    <Box key={`row-${indexY}-box${indexX}`} indexX={indexX} indexY={indexY} boxSize={boxSize}/>
+                )))}
             </svg>
         </div>
     )
