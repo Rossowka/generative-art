@@ -2,19 +2,17 @@
     height: 100vh;
     width: 100vw;
     padding: 1rem;
-    background-color: antiquewhite; //temporary color
     display: flex;
     justify-content: center;
     align-items: center;
 
     & svg {
         aspect-ratio: 1;
-        background-color: white; //temporary color
+        background-color: white; //fallback color
     }
 
 }
 
 .box {
-    fill: none;
-    stroke: black; //temporary property
+    //for now not used
 }
