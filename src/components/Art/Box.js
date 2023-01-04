@@ -7,8 +7,13 @@ function Box({ boxSize, indexY, indexX, colorPalette }) {
     let backgroundColor = colorPalette[randomChoiceFrom(colorPalette)];
 
     return (
-        <g className='box' fill={`#${backgroundColor}`}>
-            <rect x={boxSize * indexX} y={boxSize * indexY} width={boxSize} height={boxSize}/>
+        <g fill={`#${backgroundColor}`}>
+            <rect
+                x={boxSize * indexX}
+                y={boxSize * indexY}
+                width={boxSize}
+                height={boxSize}
+                />
         </g>
     )
 }

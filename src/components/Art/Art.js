@@ -3,6 +3,7 @@ import { colors } from '../../assets';
 import { randomChoiceFrom, randomFromBetween } from '../../utils';
 
 import Box from './Box';
+import Circle from './Circle';
 
 import './styles.scss';
 
@@ -21,7 +22,7 @@ function Art() {
         <div className='art' style={{backgroundColor: `#${backgroundColor}15`}}>
             <svg width={artSize}>
                 {boxes.map((array, indexY) => array.map((box, indexX) => (
-                    <Box
+                    <Circle
                         key={`row-${indexY}-box${indexX}`}
                         indexX={indexX}
                         indexY={indexY}
