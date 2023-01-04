@@ -18,7 +18,7 @@ function Art() {
     let backgroundColor = colorPalette[randomChoiceFrom(colorPalette)];
 
     return (
-        <div className='art' style={{backgroundColor: `#${backgroundColor}90`}}>
+        <div className='art' style={{backgroundColor: `#${backgroundColor}15`}}>
             <svg width={artSize}>
                 {boxes.map((array, indexY) => array.map((box, indexX) => (
                     <Box

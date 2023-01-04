@@ -11,6 +11,10 @@
         background-color: white; //fallback color
     }
 
+    svg * {
+        // Removes little gaps between the shapes
+        shape-rendering: crispEdges;
+      }
 }
 
 .box {
