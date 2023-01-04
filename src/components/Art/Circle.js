@@ -1,9 +1,10 @@
 import React from 'react';
 import { getTwoColors } from '../../utils';
 
-function Circle({ boxSize, indexY, indexX, colorPalette }) {
+function Circle({ props }) {
 
-    const { foregroundColor, backgroundColor } = getTwoColors(colorPalette);
+    const { boxSize, indexY, indexX } = props;
+    const { foregroundColor, backgroundColor } = getTwoColors(props.colorPalette);
 
     return (
         <g>
@@ -21,7 +22,7 @@ function Circle({ boxSize, indexY, indexX, colorPalette }) {
                 fill={`#${foregroundColor}`}
                 />
         </g>
-    )
+    );
 }
 
 export default Circle;

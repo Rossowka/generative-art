@@ -3,19 +3,21 @@ import { randomChoiceFrom } from '../../utils';
 
 import './styles.scss';
 
-function Box({ boxSize, indexY, indexX, colorPalette }) {
-    let backgroundColor = colorPalette[randomChoiceFrom(colorPalette)];
+function Box({ props }) {
+    const { boxSize, indexY, indexX, colorPalette } = props;
+    const backgroundColor = colorPalette[randomChoiceFrom(colorPalette)];
 
     return (
-        <g fill={`#${backgroundColor}`}>
+        <g>
             <rect
                 x={boxSize * indexX}
                 y={boxSize * indexY}
                 width={boxSize}
                 height={boxSize}
+                fill={`#${backgroundColor}`}
                 />
         </g>
-    )
+    );
 }
 
 export default Box;

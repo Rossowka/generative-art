@@ -1,0 +1,4 @@
+let shapes = [
+    'Box',
+    'Circle'
+]

@@ -2,8 +2,7 @@ import React from 'react';
 import { colors } from '../../assets';
 import { randomChoiceFrom, randomFromBetween } from '../../utils';
 
-import Box from './Box';
-import Circle from './Circle';
+import DrawShape from './DrawShape';
 
 import './styles.scss';
 
@@ -22,13 +21,13 @@ function Art() {
         <div className='art' style={{backgroundColor: `#${backgroundColor}15`}}>
             <svg width={artSize}>
                 {boxes.map((array, indexY) => array.map((box, indexX) => (
-                    <Circle
+                    <DrawShape
                         key={`row-${indexY}-box${indexX}`}
                         indexX={indexX}
                         indexY={indexY}
                         boxSize={boxSize}
                         colorPalette={colorPalette}
-                        />
+                    />
                 )))}
             </svg>
         </div>
