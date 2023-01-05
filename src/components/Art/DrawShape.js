@@ -1,13 +1,13 @@
 import React from 'react';
 import { randomChoiceFrom } from '../../utils';
 
-import Box from './Box';
-import Circle from './Circle';
+import { Box, Circle, Triangle } from '../Art';
 
 function DrawShape( props ) {
     const shapes = [
         <Box props={props}/>,
         <Circle props={props}/>,
+        <Triangle props={props}/>,
     ];
     let shape = shapes[randomChoiceFrom(shapes)];
 

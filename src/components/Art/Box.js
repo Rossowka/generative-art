@@ -1,11 +1,11 @@
 import React from 'react';
-import { randomChoiceFrom } from '../../utils';
+import { getColors } from '../../utils';
 
 import './styles.scss';
 
 function Box({ props }) {
-    const { boxSize, indexY, indexX, colorPalette } = props;
-    const backgroundColor = colorPalette[randomChoiceFrom(colorPalette)];
+    const { boxSize, indexY, indexX } = props;
+    const [ backgroundColor ] = getColors(props.colorPalette);
 
     return (
         <g>

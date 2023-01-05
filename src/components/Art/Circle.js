@@ -1,10 +1,10 @@
 import React from 'react';
-import { getTwoColors } from '../../utils';
+import { getColors } from '../../utils';
 
 function Circle({ props }) {
 
     const { boxSize, indexY, indexX } = props;
-    const { foregroundColor, backgroundColor } = getTwoColors(props.colorPalette);
+    const [ foregroundColor, backgroundColor ] = getColors(props.colorPalette);
 
     return (
         <g>
