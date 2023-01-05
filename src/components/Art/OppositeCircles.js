@@ -1,10 +1,15 @@
 import React from 'react';
-import { getColors } from '../../utils';
+import { getColors, randomChoiceFrom } from '../../utils';
 
 function OppositeCircles({ props }) {
 
     const { boxSize, indexY, indexX } = props;
     const [ foregroundColor, backgroundColor ] = getColors(props.colorPalette);
+
+    const offset = randomChoiceFrom([
+        [0, 0, boxSize, boxSize],
+        [0, boxSize, boxSize, 0],
+    ]);
 
     return (
         <g className='opposite-circles'>
@@ -26,14 +31,14 @@ function OppositeCircles({ props }) {
             </mask>
             <g mask={`url(#mask${indexY}-${indexX})`}>
                 <circle
-                    cx={(boxSize * indexX)}
-                    cy={(boxSize * indexY)}
+                    cx={(boxSize * indexX) + offset[0]}
+                    cy={(boxSize * indexY) + offset[1]}
                     r={boxSize/2}
                     fill={`#${foregroundColor}`}
                     />
                 <circle
-                    cx={(boxSize * indexX) + boxSize}
-                    cy={(boxSize * indexY) + boxSize}
+                    cx={(boxSize * indexX) + offset[2]}
+                    cy={(boxSize * indexY) + offset[3]}
                     r={boxSize/2}
                     fill={`#${foregroundColor}`}
                     />

@@ -5,7 +5,7 @@ function getColors(colorPalette) {
     let mixedPalette = [];
 
     for (let i = 0; i < [...colorPalette].length; i++) {
-        let colorIndex = randomChoiceFrom(colors);
+        let colorIndex = colors.indexOf(randomChoiceFrom(colors));
         mixedPalette[i] = colors[colorIndex];
         colors.splice(colorIndex, 1);
     }

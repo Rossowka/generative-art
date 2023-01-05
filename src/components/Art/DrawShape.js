@@ -9,13 +9,12 @@ import {
     } from '../Art';
 
 function DrawShape( props ) {
-    const shapes = [
+    const shape = randomChoiceFrom([
         <Box props={props}/>,
         <Circle props={props}/>,
         <Triangle props={props}/>,
         <OppositeCircles props={props}/>,
-    ];
-    let shape = shapes[randomChoiceFrom(shapes)];
+    ]);
 
     return shape;
 }
