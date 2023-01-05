@@ -6,7 +6,7 @@ function Triangle({ props }) {
     const [ foregroundColor, backgroundColor ] = getColors(props.colorPalette);
 
     return (
-        <g>
+        <g className='triangle'>
             <rect
                 x={boxSize * indexX}
                 y={boxSize * indexY}

@@ -7,7 +7,7 @@ function Circle({ props }) {
     const [ foregroundColor, backgroundColor ] = getColors(props.colorPalette);
 
     return (
-        <g>
+        <g className='circle'>
             <rect
                 x={boxSize * indexX}
                 y={boxSize * indexY}

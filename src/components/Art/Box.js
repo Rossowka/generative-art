@@ -8,7 +8,7 @@ function Box({ props }) {
     const [ backgroundColor ] = getColors(props.colorPalette);
 
     return (
-        <g>
+        <g className='box'>
             <rect
                 x={boxSize * indexX}
                 y={boxSize * indexY}

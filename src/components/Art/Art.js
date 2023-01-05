@@ -9,7 +9,7 @@ import './styles.scss';
 function Art() {
     // to break out from the square pattern you can randomize art size
     const artSize = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.9);
-    const gridSize = randomFromBetween(3, 12);
+    const gridSize = 3;//randomFromBetween(3, 12);
     const boxSize = artSize / gridSize ;
 
     let boxes = new Array(gridSize).fill(new Array(gridSize).fill(0));
