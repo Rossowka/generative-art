@@ -1,4 +1,0 @@
-let shapes = [
-    'Box',
-    'Circle'
-]
