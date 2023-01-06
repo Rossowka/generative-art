@@ -5,7 +5,8 @@ import {
     Box,
     Circle,
     Triangle,
-    OppositeCircles
+    OppositeCircles,
+    Diamond,
     } from '../Art';
 
 function DrawShape( props ) {
@@ -14,6 +15,7 @@ function DrawShape( props ) {
         <Circle props={props}/>,
         <Triangle props={props}/>,
         <OppositeCircles props={props}/>,
+        <Diamond props={props}/>,
     ]);
 
     return shape;
