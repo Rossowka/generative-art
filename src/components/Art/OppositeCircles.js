@@ -4,14 +4,14 @@ import { getColors, randomChoiceFrom } from '../../utils';
 function OppositeCircles({ props }) {
 
     const { boxSize, indexY, indexX } = props;
-    const [ foregroundColor, backgroundColor ] = getColors(props.colorPalette);
+    const [ firstColor, secondColor, thirdColor ] = getColors(props.colorPalette);
 
     const PosX = boxSize * indexX;
     const PosY = boxSize * indexY;
 
     const offset = randomChoiceFrom([
-        [0, 0, boxSize, boxSize],
-        [0, boxSize, boxSize, 0],
+        [0, 0, boxSize, boxSize, randomChoiceFrom([0, 1])],
+        [0, boxSize, boxSize, 0, randomChoiceFrom([0, 1])],
     ]);
 
     return (
@@ -21,7 +21,7 @@ function OppositeCircles({ props }) {
                 y={PosY}
                 width={boxSize}
                 height={boxSize}
-                fill={`#${backgroundColor}`}
+                fill={`#${firstColor}`}
                 />
             <mask id={`mask${indexY}-${indexX}`}>
                 <rect
@@ -37,14 +37,26 @@ function OppositeCircles({ props }) {
                     cx={(PosX) + offset[0]}
                     cy={(PosY) + offset[1]}
                     r={boxSize/2}
-                    fill={`#${foregroundColor}`}
+                    fill={`#${secondColor}`}
                     />
                 <circle
                     cx={(PosX) + offset[2]}
                     cy={(PosY) + offset[3]}
                     r={boxSize/2}
-                    fill={`#${foregroundColor}`}
+                    fill={`#${randomChoiceFrom([secondColor, thirdColor])}`}
                     />
+                {offset[4] && <circle
+                    cx={(PosX) + offset[0]}
+                    cy={(PosY) + offset[3]}
+                    r={boxSize/2}
+                    fill={`#${secondColor}`}
+                    />}
+                {offset[4] && <circle
+                    cx={(PosX) + offset[2]}
+                    cy={(PosY) + offset[1]}
+                    r={boxSize/2}
+                    fill={`#${secondColor}`}
+                    />}
             </g>
         </g>
     );

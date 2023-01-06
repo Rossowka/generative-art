@@ -11,7 +11,7 @@ function Diamond({ props }) {
     const PosY = boxSize * indexY;
 
     return (
-        <g className='box'>
+        <g className='diamond'>
             <rect
                 x={PosX}
                 y={PosY}

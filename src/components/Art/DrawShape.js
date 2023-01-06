@@ -7,6 +7,7 @@ import {
     Triangle,
     OppositeCircles,
     Diamond,
+    Stripes
     } from '../Art';
 
 function DrawShape( props ) {
@@ -16,6 +17,7 @@ function DrawShape( props ) {
         <Triangle props={props}/>,
         <OppositeCircles props={props}/>,
         <Diamond props={props}/>,
+        <Stripes props={props}/>,
     ]);
 
     return shape;
